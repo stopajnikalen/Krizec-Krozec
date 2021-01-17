@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <!--CSS-->
+    <link rel="stylesheet" href="styles.css">
+    <!--JavaScript-->
+    <script src="script.js" defer></script>
+    <!--Jquery-->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <!--Bootstrap-->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+    <title>Križec-Krožec</title>
+  </head>
+  <body onload="zacetek()">
+
+    <div class="container">
+
+      <div class="row">
+        <div class="col-12 bg-secondary text-center mb-3 pb-3">
+          <h1>Križec-Krožec</h1>
+        </div>
+      </div>
+
+      <div class="card" id="kartica1">
+
+        <div class="col-12 text-center mb-3 pb-3 pt-20">
+          <h2>Dobrodošli!</h2>
+          <p>Ta igra je namenjena dvema igralcema. Eden igra s križci, drugi pa s krožci. Cilj igre je postaviti tri svoje znake vodoravno, navpično ali diagonalno pred nasprotnikom. Pritisnite na spodnji gumb, da pričneto s igro.</p>
+          <img src="src/ozadje.png">
+        </div>
+        <button class="btn btn-primary" type="button" data-toggle="modal" data-target="#potrditvenoOkno">Prični s igro</button>
+        <!-- Bootstrap modal-potrditveno okno -->
+        <div class="modal fade" id="potrditvenoOkno" role="dialog">
+          <div class="modal-dialog">
+            <div class="modal-content">
+              <div class="modal-header">
+                <h5 class="modal-title">Izbira začetnega igralca!</h5>
+                <button type="button" class="close" data-dismiss="modal">
+                  <span>&times;</span>
+                </button>
+              </div>
+              <div class="modal-body">
+                Izberite igralca, ki prične prvi!
+              </div>
+              <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-dismiss="modal" id="izbranKrizec" onclick="izbran('krizec')">Križec</button>
+                <button type="button" class="btn btn-secondary" data-dismiss="modal" id="izbranKrozec" onclick="izbran('krozec')">Krožec</button>
+              </div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+
+      <div class="card" id="kartica2">
+
+
+        <table id="igralnaTabela">
+          <tr>
+            <td><img id="1" src="src/nic.png" onclick="klik(this.id)"></td>
+            <td><img id="2" src="src/nic.png" onclick="klik(this.id)"></td>
+            <td><img id="3" src="src/nic.png" onclick="klik(this.id)"></td>
+          </tr>
+          <tr>
+            <td><img id="4" src="src/nic.png" onclick="klik(this.id)"></td>
+            <td><img id="5" src="src/nic.png" onclick="klik(this.id)"></td>
+            <td><img id="6" src="src/nic.png" onclick="klik(this.id)"></td>
+          </tr>
+          <tr>
+            <td><img id="7" src="src/nic.png" onclick="klik(this.id)"></td>
+            <td><img id="8" src="src/nic.png" onclick="klik(this.id)"></td>
+            <td><img id="9" src="src/nic.png" onclick="klik(this.id)"></td>
+          </tr>
+        </table>
+
+        <div class="row">
+          <div class="col-12  text-center mt-3 pt-3">
+            <div class="alert alert-primary izpisIgralca" id="izpisIgralca" role="alert">
+
+            </div>
+            <button class="btn btn-primary ml-2 mb-2" type="button" id="nadaljuj" onclick="nadaljuj()">Nadaljuj</button>
+          </div>
+        </div>
+
+        <table class="table table-hover table-bordered" id="tabelaRezultatov">
+          <thead>
+          <tr>
+            <th style="width: 50%">Številka igre</th>
+            <th style="width: 50%">Rezultat</th>
+          </tr>
+          </thead>
+        </table>
+
+        <div class="row">
+          <div class="col-12  text-center ">
+            <button class="btn btn-primary ml-2 mb-2" type="button" id="novaIgra" onclick="location.reload()">Nova igra</button>
+          </div>
+        </div>
+
+      </div>
+
+
+      <div class="row">
+        <div class="col-12 bg-secondary text-center text-bold mt-3 pt-3">
+          <p>Alen Stopajnik, Lea tajnikar - 2021</p>
+        </div>
+      </div>
+
+    </div>
+
+  </body>
+</html>

@@ -1,0 +1,26 @@
+#igralnaTabela {
+  border-collapse: collapse;
+  border: 3px solid black;
+  margin-left: auto;
+  margin-right: auto;
+  padding: 0;
+}
+
+#igralnaTabela td {
+  height: 120px;
+  width: 120px;
+  border-collapse: collapse;
+  border: 2px solid black;
+  text-align: center;
+}
+
+img {
+  display: block;
+  max-width: 100%;
+  margin-left: auto;
+  margin-right: auto;
+  height: auto;
+}
+
+
+
